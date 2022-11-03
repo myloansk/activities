@@ -19,5 +19,8 @@ class Source(ABC):
     @abstractmethod
     def prepare_data(self)->None:pass 
 
+    def get_data(self)->DataFrame:
+        return spark.sql(f"SELECT * FROM {dbName}.{tablaName}")
+
 
 
