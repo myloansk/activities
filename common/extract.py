@@ -14,13 +14,16 @@ from typing import Dict, List, NamedTuple,Optional
 
 class Source(ABC):
 
-    _config:SourceConfig
+    _config:AppConfig
 
     @abstractmethod
     def prepare_data(self)->None:pass 
 
     def get_data(self)->DataFrame:
-        return spark.sql(f"SELECT * FROM {dbName}.{tablaName}")
+        return spark.sql(f"SELECT * FROM {dbName}.{tableName}")
+
+
+
 
 
 
