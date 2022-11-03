@@ -17,5 +17,7 @@ class Source(ABC):
     _config:SourceConfig
 
     @abstractmethod
-    def get_data(self)->DataFrame:pass 
+    def prepare_data(self)->None:pass 
+
+
 
